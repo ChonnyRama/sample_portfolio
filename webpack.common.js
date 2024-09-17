@@ -1,5 +1,5 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   entry: {
@@ -12,11 +12,15 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.html$/,
+        use: 'html-loader',
+      },
+      {
         test: /\.css$/i,
         use: ['style-loader', 'css-loader'],
       },
       {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        test: /\.(png|svg|jpg|jpeg|gif|webp)$/i,
         type: 'asset/resource',
       },
       {
@@ -32,6 +36,6 @@ module.exports = {
       filename: 'index.html',
       inject: 'head',
       scriptLoading: 'defer',
-    })
+    }),
   ],
-};
+}
