@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+html,body {
+    overflow-x: hidden;
+}
+
 body {
     min-height: 100vh;
     display: flex;
@@ -34,6 +38,15 @@ header {
 .image-container {
     max-width: 400px;
     max-height: 400px;
+    position: relative;
+}
+
+.image-container span {
+    position: absolute;
+    font-size: 42px;
+    color: rgb(156, 235, 71);
+    top: 350px;
+    left: 80px;
 }
 
 .about-me {
@@ -60,6 +73,12 @@ header {
 
 .content {
     max-width: 900px;
+    position: relative;
+}
+
+h2 {
+    position: relative;
+    text-align: center;
 }
 .grid-container {
     display: grid;
@@ -101,3 +120,114 @@ header {
 a {
     color: black;
 }
+
+footer {
+    margin-top: 20px;
+    display: flex;
+    max-width: 900px;
+    flex-wrap: wrap;
+    
+
+}
+
+.contact-info-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 25px 60px;
+}
+
+footer > .image-container {
+    max-width: 300px;
+}
+
+.footer-image {
+    width: 100%;
+    height: auto;
+}
+
+@media (max-width:1200px) {
+    header {
+        display: block;
+        margin-top: 20px;
+        
+    }
+
+    .image-container {
+        width: 200px;
+        height: auto;
+        position: relative;
+        float: left;
+        right: 20px;
+        margin: 10px;
+    }
+
+    .about-me {
+        clear: none;
+        padding: 50px 10px;
+    }
+
+    .image-container span {
+    position: absolute;
+    font-size: 42px;
+    color: rgb(255, 255, 255);
+    top: -15px;
+    left: 220px;
+    width: 300px;
+}
+    .content {
+        margin: 60px;
+    }
+
+    .grid-container {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+
+
+}
+
+@media (max-width:600px) {
+    header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .image-container {
+        right: 0;
+        margin-bottom: -50px;
+    }
+
+    .image-container span {
+        width: 200px;
+        top: 190px;
+        left: 5px;
+    }
+
+    .about-me {
+        background: none;
+        box-shadow: none;
+        font-size: 1.2rem;
+    }
+
+    h1 { 
+        text-align: center;
+    }
+
+    .content {
+        margin-top: -50px;
+    }
+
+    footer {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    h3 { 
+        text-align: center;
+    }
+
+}
+    
